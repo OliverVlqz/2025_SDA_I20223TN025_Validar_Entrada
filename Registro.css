@@ -17,7 +17,7 @@
 .formulario {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 30rem;
 }
 .formulario input {
   padding: 10px;
@@ -49,4 +49,15 @@
 .formulario button:disabled {
   background-color: #b3b3b3;
   cursor: not-allowed;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container div {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
 }
