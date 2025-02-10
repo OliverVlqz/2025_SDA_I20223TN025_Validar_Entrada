@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Registro de Empresa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="Registro.css" />
+    <script defer src="Registro.js"></script>
+  </head>
+  <body class="body">
+    <h1 class="title">Registro de Empresa</h1>
+    <form class="formulario" id="formEmpresa">
+      <label for="razonSocial">Razón Social</label>
+      <input
+        type="text"
+        name="razonSocial"
+        id="razonSocial"
+        placeholder="Nombre de la Empresa."
+        required
+      />
+      <p id="errorRazonSocial" class="error"></p>
+
+      <label for="rfc">RFC</label>
+      <input
+        type="text"
+        name="rfc"
+        id="rfc"
+        placeholder="ABCD123456XYZ"
+        required
+      />
+      <p id="errorRFC" class="error"></p>
+
+      <label for="telefono">Teléfono</label>
+      <input
+        type="text"
+        name="telefono"
+        id="telefono"
+        placeholder="55-1234-5678"
+        required
+      />
+      <p id="errorTelefono" class="error"></p>
+
+      <label for="correo">Correo</label>
+      <input
+        type="email"
+        name="correo"
+        id="correo"
+        placeholder="correo@correo.com"
+        required
+      />
+      <p id="errorCorreo" class="error"></p>
+
+      <label for="contacto">Contacto</label>
+      <input
+        type="text"
+        name="contacto"
+        id="contacto"
+        placeholder="Nombre del contacto"
+        required
+      />
+      <p id="errorContacto" class="error"></p>
+
+      <button type="submit" class="btn" id="btnRegistrar" disabled>
+        Registrar
+      </button>
+    </form>
+  </body>
+</html>
