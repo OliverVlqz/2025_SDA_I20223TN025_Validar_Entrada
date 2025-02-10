@@ -17,28 +17,24 @@ document.addEventListener("DOMContentLoaded", function () {
   function validarFormulario() {
     let isValid = true;
 
-    // Limpiar mensajes previos
     errorRazonSocial.textContent = "";
     errorRFC.textContent = "";
     errorTelefono.textContent = "";
     errorCorreo.textContent = "";
     errorContacto.textContent = "";
 
-    // Validar Razón Social
     if (razonSocial.value.trim().length < 3) {
       errorRazonSocial.textContent =
         "La razón social debe tener al menos 3 caracteres.";
       isValid = false;
     }
 
-    // Validar RFC (Formato mexicano)
     const rfcRegex = /^[A-ZÑ&]{3,4}\d{6}[A-Z\d]{3}$/;
     if (!rfcRegex.test(rfc.value.trim())) {
       errorRFC.textContent = "Ingrese un RFC válido (Ejemplo: ABCD123456XYZ).";
       isValid = false;
     }
 
-    // Validar Teléfono (Formato MX)
     const telefonoRegex = /^(\d{2,3}-?)?\d{4}-?\d{4}$/;
     if (!telefonoRegex.test(telefono.value.trim())) {
       errorTelefono.textContent =
@@ -46,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
-    // Validar Correo Electrónico
     const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!correoRegex.test(correo.value.trim())) {
       errorCorreo.textContent =
@@ -54,25 +49,21 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
-    // Validar Contacto
     if (contacto.value.trim().length < 3) {
       errorContacto.textContent =
         "El nombre del contacto debe tener al menos 3 caracteres.";
       isValid = false;
     }
 
-    // Habilitar o deshabilitar botón
     btnRegistrar.disabled = !isValid;
   }
 
-  // Validar mientras el usuario escribe
   razonSocial.addEventListener("input", validarFormulario);
   rfc.addEventListener("input", validarFormulario);
   telefono.addEventListener("input", validarFormulario);
   correo.addEventListener("input", validarFormulario);
   contacto.addEventListener("input", validarFormulario);
 
-  // Validar al enviar el formulario
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     validarFormulario();
